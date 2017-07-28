@@ -6,6 +6,7 @@ import { storiesOf } from '@storybook/react';
 import BarebonesExample from './barebones';
 import AddRemoveExample from './add-remove';
 import ExternalNodeExample from './external-node';
+import MultipleTreesExample from './multiple-trees';
 import TouchSupportExample from './touch-support';
 
 const wrapWithSource = (node, src) =>
@@ -33,6 +34,9 @@ storiesOf('Basics', module)
 storiesOf('Advanced', module)
   .add('Drag from external source', () =>
     wrapWithSource(<ExternalNodeExample />, 'external-node.js')
+  )
+    .add('Drag between multiple trees', () =>
+    wrapWithSource(<MultipleTreesExample />, 'multiple-trees.js')
   )
   .add('Touch support (Experimental)', () =>
     wrapWithSource(<TouchSupportExample />, 'touch-support.js')
